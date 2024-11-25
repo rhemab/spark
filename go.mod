@@ -1,4 +1,4 @@
-module spark
+module github.com/rhemab/spark
 
 go 1.23.0
 
