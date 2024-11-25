@@ -12,9 +12,13 @@ import (
 
 var getCmd = &cobra.Command{
 	Use:   "get",
-	Short: "Send a get request. Example: spark get 'https://swapi.dev/api/people/1'",
-	Long:  `Send a get request. Example: spark get 'https://swapi.dev/api/people/1'`,
+	Short: "Send a GET request.",
+	Long:  `Send a GET request. Example: spark get 'https://swapi.dev/api/people/1'`,
 	Run: func(cmd *cobra.Command, args []string) {
+		if len(args) == 0 {
+			fmt.Println(`Type: spark get "<url>" --header "<key>=<value>,<key>=<value>"`)
+			return
+		}
 		url := args[0]
 		fmt.Println("GET", url)
 
