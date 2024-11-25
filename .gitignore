@@ -1,3 +1,4 @@
 *.json
 
 dist/
+.goreleaser.yaml
